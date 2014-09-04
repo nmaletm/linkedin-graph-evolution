@@ -1,0 +1,159 @@
+/* YUI 3.5.0 reset.css (http://developer.yahoo.com/yui/3/cssreset/) - http://cssreset.com */
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+
+a, a:visited{
+	color: #333;
+	text-decoration: none;
+}
+a:hover{
+	color: #666;
+	text-decoration: underline;
+}
+
+h1{
+	font-size: 26px;
+}
+
+h2{
+	font-size: 22px;
+}
+
+h3{
+	font-size: 18px;
+}
+
+h4{
+	font-size: 16px;
+}
+h1,h2,h3,h4{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+ul{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div, span, p{
+	font-size: 14px;
+}
+p{
+	padding-bottom: 10px;
+}
+.viewer{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.wrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+}
+
+.wrapper > div{
+	margin: 0 auto;
+}
+
+#subtitle{
+	font-size: 12px;
+}
+#controls{
+	position: absolute;
+	bottom: 10px;
+	left: 20%;
+}
+
+#controls img{
+	display: none;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+#share{
+	position: absolute;
+	bottom: 10px;
+	right: 20%;
+}
+
+#share > div{
+	display: inline-block;
+}
+
+#share .twitter{
+	padding-right: 10px;
+}
+
+.fb_iframe_widget {
+    top: -4px;
+}
+
+#legend{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+    text-align: left;
+}
+
+#legend li a{
+	font-size: 16px;
+}
+#legend li{
+	list-style: none;
+}
+#legend li span{
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	margin-right:10px;
+}
+
+li#inlab span{
+	background: #f55e22;
+}
+li#fib span{
+	background: #007099;
+}
+li#trovit span{
+	background: #eda042;
+}
+li#etsetb span{
+	background: #c26191;
+}
+
+li#sek span{
+	background: #678c00;
+}
+
+#info-title{
+	position: absolute;
+	top: 10px;
+	right: 40%;
+}
+
+#help-information{
+	cursor: pointer;
+	display: none;
+}
+#help-information > div{
+	max-width: 400px;
+	margin-top: 150px;
+	background: #fff;
+	text-align: left;
+	padding: 20px;
+	-webkit-box-shadow: 0px 10px 41px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 41px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 41px 0px rgba(0,0,0,0.75);
+}
