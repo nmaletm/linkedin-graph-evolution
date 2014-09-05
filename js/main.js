@@ -1,7 +1,46 @@
 
 
 function GraphViewer() {
-    this.images = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg'];
+    this.images = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg', 'img/4.jpg', 'img/5.jpg'];
+    this.dates = ['03/12/2013', '25/05/2014', '01/07/2014', '28/07/2014', '25/08/2014'];
+
+    this.legend = [
+		{
+			fib: 'blue',
+			trovit: 'yellow',
+			etsetb: 'orange',
+			sek: 'pink'
+		},
+		{
+			inlab: 'blue',
+			fib: 'orange',
+			trovit: 'yellow',
+			etsetb: 'pink',
+			sek: 'green'
+		},
+		{
+			inlab: 'blue',
+			fib: 'orange',
+			trovit: 'yellow',
+			etsetb: 'pink',
+			sek: 'green'
+		},
+		{
+			inlab: 'blue',
+			fib: 'orange',
+			trovit: 'yellow',
+			etsetb: 'pink',
+			sek: 'green'
+		},
+		{
+			inlab: 'blue',
+			fib: 'orange',
+			trovit: 'yellow',
+			etsetb: 'pink',
+			sek: 'green'
+		},
+    ];
+
     this.currentImage = 0;
     this.timer = null;
 }
@@ -9,6 +48,8 @@ function GraphViewer() {
 GraphViewer.prototype.init = function() {
 	var me = this;
 	$("#viewer").attr("src",me.images[me.currentImage]);
+	me.updateDate();
+	me.updateLegend();
 
 	$('#play').click(function(){
 		me.play();
@@ -48,7 +89,8 @@ GraphViewer.prototype.changeImage = function(animated, next) {
 		me.currentImage = next;
 		$("#viewer").fadeOut(500, function() {
 			$("#viewer").attr("src",me.images[me.currentImage]);
-			me.udateControlButtons();
+			me.updateDate();
+			me.updateLegend();
 		}).fadeIn(500, function(){
 			me.udateControlButtons();
 		});
@@ -57,8 +99,25 @@ GraphViewer.prototype.changeImage = function(animated, next) {
 		me.currentImage = next;
 		$("#viewer").attr("src",me.images[me.currentImage]);
 		me.udateControlButtons();
+		me.updateDate();
+		me.updateLegend();
 	}
 	$('#info-title').fadeOut();
+};
+
+GraphViewer.prototype.updateLegend = function() {
+	var me = this;
+	$('#legend-colors').removeClass();
+	$('#legend-colors li').removeClass().hide();
+    jQuery.each(this.legend[me.currentImage], function(i, val) {
+    	console.log(i+'-'+val);
+		$('#'+i+'').removeClass().addClass(val).show();
+    });
+};
+
+GraphViewer.prototype.updateDate = function() {
+	var me = this;
+	$("#date").html(me.dates[me.currentImage]);
 };
 
 GraphViewer.prototype.nextImage = function(animated) {
@@ -84,9 +143,12 @@ GraphViewer.prototype.play = function() {
 	var me = this;
 
 	me.nextImage(true);
+	if(me.timer != undefined){
+		window.clearInterval(me.timer);
+	}
 	me.timer = setInterval(function () {
 		me.nextImage(true);
-	}, 2000);
+	}, 3000);
 
 	me.udateControlButtons();
 
@@ -173,9 +235,6 @@ GraphViewer.prototype.configureScroll = function() {
 GraphViewer.prototype.configureSwipe = function() {
 	var me = this;
 	$(document).swipe( {
-		tap:function(event, target) {
-			me.nextImage(true);
-		},
 		swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
 			if(direction == 'left'){
 				me.nextImage(true);

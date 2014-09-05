@@ -120,20 +120,20 @@ p{
 	margin-right:10px;
 }
 
-li#inlab span{
+li.orange span{
 	background: #f55e22;
 }
-li#fib span{
+li.blue span{
 	background: #007099;
 }
-li#trovit span{
+li.yellow span{
 	background: #eda042;
 }
-li#etsetb span{
+li.pink span{
 	background: #c26191;
 }
 
-li#sek span{
+li.green span{
 	background: #678c00;
 }
 
