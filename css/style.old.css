@@ -143,11 +143,6 @@ li.green span{
 	right: 40%;
 }
 
-#info-title h2{
-	display: inline-block;
-}
-
-
 #help-information{
 	cursor: pointer;
 	display: none;
